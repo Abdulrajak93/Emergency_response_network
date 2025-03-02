@@ -25,19 +25,19 @@ app.use('/alert', require('./routes/alertRoute'));
 const connectDB = async () => {
     try {
         await mongoose.connect(process.env.MONGO_URI );
-        console.log('✅ MongoDB Connected Successfully');
+        console.log('MongoDB Connected Successfully');
         
         // Start server only after DB is connected
         const PORT = process.env.PORT || 5000;
         server.listen(PORT, () => {
-            console.log(`🚀 Server running on port ${PORT}`);
+            console.log(`Server running on port ${PORT}`);
         });
 
         // Initialize Socket.io after DB connection
         initializeSocket(server);
 
     } catch (error) {
-        console.error('❌ MongoDB Connection Error:', error);
+        console.error('MongoDB Connection Error:', error);
         process.exit(1);
     }
 };

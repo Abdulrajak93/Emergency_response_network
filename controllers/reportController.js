@@ -1,7 +1,5 @@
 const Report = require('../models/reportModel');
 
-// controllers/reportController.js
-
 exports.createReport = async (req, res) => {
     try {
         // Destructure the required fields from the request body
